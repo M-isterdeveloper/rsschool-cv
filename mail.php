@@ -32,19 +32,19 @@ $mail->Subject = 'Заявка сайта';
 $mail->Body    = '<h3>Встречайте супер письмо</h3>' .'<br> Имя: '.$name . '<br> Email: ' .$email. '<br>Сообщение: ' .$message;
 $mail->AltBody = '';
 
-// if(!$mail->send()) {
-//     echo 'Error';
-// } else {
-//     header('location: thank-you.html');
-// }
- if (!$mail->send()) {
-    $message = 'Ошибка';
- } else {
-    $message = 'Данные отправлены';
- }
+if(!$mail->send()) {
+    echo 'Error';
+} else {
+    header('location: thank-you.html');
+}
+//  if (!$mail->send()) {
+//     $message = 'Ошибка';
+//  } else {
+//     $message = 'Данные отправлены';
+//  }
 
- $response = ['message' => $message];
+//  $response = ['message' => $message];
 
- header('Content-type: application/json');
- echo json_encode($response);
+//  header('Content-type: application/json');
+//  echo json_encode($response);
 ?>
